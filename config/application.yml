@@ -1,0 +1,39 @@
+# Add configuration values here, as shown below.
+#
+# pusher_app_id: "2954"
+# pusher_key: 7381a978f7dd7f9a1117
+# pusher_secret: abdc3b896a0ffb85d373
+# stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
+# stripe_publishable_key: pk_test_ro9jV5SNwGb1yYlQfzG17LHK
+#
+# production:
+#   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
+#   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+
+STRIPE_API_KEY: sk_test_neSoB1txSzAXtVpGEPbben29
+STRIPE_PUBLISHABLE_KEY: pk_test_P8GHJiUuHyXmTfewTAaP1QA2
+STRIPE_CONNECT_CLIENT_ID: ca_6FOmublst65juTw908bvA83s0Ggo277h
+
+# non omniauth access
+API_KEY: sk_test_neSoB1txSzAXtVpGEPbben29
+PUBLISHABLE_KEY: pk_test_P8GHJiUuHyXmTfewTAaP1QA2
+
+MANDRILL_USERNAME: hello@alwaysnevercreative.com
+MANDRILL_API_KEY: jd6N4ZHi1Oipt0JeYjRf2g
+
+# Authentication for charging customers page
+USERNAME: hello@alwaysnevercreative.com
+PASSWORD: uxKDUPEFVbu3N7
+
+production: 
+  STRIPE_API_KEY: sk_live_OU7oYSY1xQkhpECpf6V6xBz6
+  STRIPE_PUBLISHABLE_KEY: pk_live_2Xb2zctfCd5SdImoNomGyr1e
+  STRIPE_CONNECT_CLIENT_ID: ca_6FOmn45MeJYkL0zBcqdNfG7urGBOvRdn
+
+  # non omniauth access
+  API_KEY: sk_live_OU7oYSY1xQkhpECpf6V6xBz6
+  PUBLISHABLE_KEY: pk_live_2Xb2zctfCd5SdImoNomGyr1e
+
+  # Authentication for charging customers page
+  USERNAME: hello@alwaysnevercreative.com
+  PASSWORD: uxKDUPEFVbu3N7

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Adddapt</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="login">
+  <div class="w-section login-section">
+    <div class="w-container login-container">
+      <div class="login-title-div">
+        <div class="text-logo">Adddapt</div>
+      </div>
+      <div class="login-form-body">
+        <div class="w-form login-form">
+
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => "email-form"}) do |f| %>
+            <%= devise_error_messages! %>
+
+            <div>
+              <%= f.email_field :email, autofocus: true, :class => "w-input get-email login-field widthed", :placeholder => "Email" %>
+            </div>
+
+            <div>
+              <%= f.password_field :password, autocomplete: "off", :class => "w-input get-email login-field widthed", :placeholder => "Password" %>
+            </div>
+
+            <div>
+              <%= f.submit "Log In", :class => "w-button get-started-submit-button login-button widthed" %>
+            </div>
+
+          <% end %>
+         
+        </div>
+      </div>
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/webflow.js"></script>
+  <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+</body>
+</html>
+

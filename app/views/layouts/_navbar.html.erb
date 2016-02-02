@@ -1,0 +1,33 @@
+<div class="w-section navbar">
+  <div class="w-container">
+    <div class="w-nav navbar-internal" data-collapse="none" data-animation="default" data-duration="400" data-contain="1">
+      <div class="w-container navbar-container">
+        <%= link_to root_path, :class => "w-nav-brand brand-logo-link" do %>
+          <div class="text-logo">Adddapt</div>
+        <% end %>
+        <% if designer_signed_in? %>
+          <nav class="w-nav-menu link-menu-dropdown" role="navigation">
+            <div class="dropdown">
+              <div class="navbar-dropdown">
+                <%= image_tag(current_designer.profile_pic.url(:thumb), :class => "dashboard-profile-image", :width => "28", :height => "28") %>
+                <div class="reg-text-12 navbar-name"><%= current_designer.full_name %></div>
+              </div>
+              <nav class="dropdown-list">
+                <%= link_to "Profile", dashboard_designer_path(current_designer), :class => "w-dropdown-link dropdown-link" %>
+                <%= link_to "Log out", destroy_designer_session_path, method: :delete, :class => "w-dropdown-link dropdown-link" %>
+              </nav>
+            </div>
+          </nav>
+          <% else %>
+          <nav class="w-nav-menu link-menu" role="navigation">
+            <%= link_to "LOGIN", new_designer_session_path %>
+            <%= link_to "SIGNUP", new_designer_registration_path %>
+          </nav>
+        <% end %>
+        <div class="w-nav-button">
+          <div class="w-icon-nav-menu"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="w-section">
+  <div class="w-container">
+    <div class="h2-div">
+      <div class="w-row header-row">
+        <div class="w-col w-col-6">
+          <h3 class="h3-div-heading no-left-padding">Edit a brand</h3>
+        </div>
+        <div class="w-col w-col-6">
+          <h3 class="h3-div-heading right"></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="w-section">
+  <div class="w-container">
+    <div class="designer-info-div edit-profile-div after-sign-up-no-padding">
+      <div class="w-container login-container after-sign-up">
+        <div class="login-form-body after-signup-form-body">
+          <div class="w-form login-form rounded-top">
+            <%= form_for(@brand) do |f| %>
+              <% if @brand.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(@brand.errors.count, "error") %> prohibited this brand from being saved:</h2>
+
+                  <ul>
+                  <% @brand.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                  </ul>
+                </div>
+              <% end %>
+              <%= f.label :name, "Give Your Brand a Title", :class => "after-sign-up-label" %>
+              <%= f.text_field :name, :class => "w-input get-email login-field", :placeholder => "Something unique that describes the style of the brand." %>
+
+              <%= f.label :description, "Description:", :class => "after-sign-up-label" %>
+              <%= f.text_area :description, :class => "w-input get-email login-field bio-signup", :placeholder => "This is a great way to sell the features of your brand. Let everyone know why it's unique, what inspired you and how you developed it. You should also recommend the types of businesses this brand would be suited for. For example- the brand you're uploading could be great for a fashion label a record store or a tech startup." %>
+             
+              <%= f.label :price, "Price:", :class => "after-sign-up-label" %>
+              <%= f.text_field :price, :class => "w-input get-email login-field" %>
+
+              <%= f.label :thumbnail, "Thumbnail:", :class => "after-sign-up-label"  %>
+              <%= f.file_field :thumbnail, :class => "w-input get-email login-field padding-top" %>
+
+              <%= f.fields_for :preview_images do |image| %>
+              
+                <%= image.label :image, "Preview Files:", :class => "after-sign-up-label"  %>
+                <%= image.file_field :image, :class => "w-input get-email login-field padding-top" %>
+
+              <% end %>
+           
+              <%= f.submit "Continue", :class => "w-button get-started-submit-button login-button" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

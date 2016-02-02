@@ -1,0 +1,102 @@
+<div class="w-section">
+  <div class="w-container">
+    <div class="h2-div">
+      <div class="w-row header-row">
+        <div class="w-col w-col-6">
+          <h3 class="h3-div-heading no-left-padding">Payment</h3>
+        </div>
+        <div class="w-col w-col-6">
+          <h3 class="h3-div-heading right"></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="w-section">
+  <div class="w-container">
+    <div class="designer-info-div edit-profile-div after-sign-up-no-padding checkout payment-div">
+      <div class="w-container login-container after-sign-up">
+        <div class="checkout-sidebar-div">
+          <h3 class="cart-total">Your Cart Total</h3>
+          <h2 class="cart-total-price"><span class="dollar-sign large">$</span><%= @cart.total_cart_price %></h2>
+          <div class="w-form login-form rounded-top payment-form">
+            <%= form_for @order, :html => { :class => "after-signup-form", :id => 'payment-form' } do |f| %>
+      
+              <%= f.label :name, "Name:", class: "after-sign-up-label payment" %>
+              <%= f.text_field :name, id: "name", :placeholder => "John Doe", :class => "w-input get-email login-field payment" %>
+
+              <%= f.label :email, "Email:", class: "after-sign-up-label payment" %>
+              <%= f.text_field :email, id: "email", :placeholder => "you@example.com", :class => "w-input get-email login-field payment" %>
+
+              <label class="after-sign-up-label payment" for="email">Card Number:</label>
+              <input class="w-input get-email login-field payment" id="number" type="text" required="required" size="20" data-stripe="number" placeholder="**** **** **** ****" pattern="[\d ]*">
+              <div class="w-row">
+                <div class="w-col w-col-3 w-clearfix">
+                  <label class="after-sign-up-label columned" for="email-2">CVC:</label>
+                  <input class="w-input get-email login-field payment cvc" id="cvc" type="text" name="cvc" data-stripe="cvc" placeholder="***" required="required" pattern="\d*"/>
+                </div>
+                <div class="w-col w-col-9">
+                  <div class="w-row exp-row">
+                    <div class="w-col w-col-6 w-clearfix">
+                      <label class="after-sign-up-label columned exp" for="email-3">EXP&nbsp;(MM):</label>
+                      <input class="w-input get-email login-field payment mm" id="exp-month" data-stripe="exp-month" placeholder="MM" name="email-3" data-name="Email 3" required="required" size="2" pattern="\d*"/>
+                    </div>
+                    <div class="w-col w-col-6 w-clearfix">
+                      <label class="after-sign-up-label columned" for="email-4">(YYYY):</label>
+                      <input class="w-input get-email login-field payment cvc yyyy" id="exp-year" data-stripe="exp-year" placeholder="YYYY" size="4" name="email-4" data-name="Email 4" required="required" pattern="\d*"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="get-started-submit-button checkout payment-button">Purchase Brand</button>
+              
+            <% end %>
+            <div class="w-form-done">
+              <p>Thank you! Your submission has been received!</p>
+            </div>
+            <div class="w-form-fail">
+              <p>Oops! Something went wrong while submitting the form</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+<script type="text/javascript">
+  $(function(){
+    Stripe.setPublishableKey('<%= Rails.configuration.stripe[:publishable_key] %>');
+
+  $('#payment-form').submit(function(event) {
+    var form = $(this);
+    form.find('button').prop('disabled', true);
+
+    Stripe.createToken(form, stripeResponseHandler);
+    return false;
+  });
+
+  function stripeResponseHandler(status, response) {
+    var form = $('#payment-form');
+    if (response.error) {
+      form.find('.payment-errors').text(response.error.message);
+      form.find('button').prop('disabled', false);
+    } else {
+      var token = response.id;
+      form.append($('<input type="hidden" name="stripeToken">').val(token));
+      form.get(0).submit();
+    }
+  }
+
+  });
+
+</script>
+
+
+
+  
+ 

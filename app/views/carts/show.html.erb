@@ -1,0 +1,45 @@
+<div class="w-section">
+  <div class="w-container">
+    <div class="h2-div">
+      <div class="w-row header-row">
+        <div class="w-col w-col-6">
+          <h3 class="h3-div-heading no-left-padding">Shopping Cart</h3>
+        </div>
+        <div class="w-col w-col-6">
+          <h3 class="h3-div-heading right"></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="w-section">
+  <div class="w-container">
+    <div class="designer-info-div edit-profile-div after-sign-up-no-padding checkout">
+      <div class="w-container login-container after-sign-up">
+
+        <% @cart.line_items.each do |item| %>
+
+          <div class="w-row">
+            <div class="w-col w-col-8">
+              <div class="w-clearfix cart-item-div">
+                <%= image_tag(item.brand.thumbnail.url, :height => "75", :class => "shopping-cart-item-image") %>
+                <h3 class="h3-div-heading no-left-padding cart-heading"><%= item.brand.name %> Brand by <%= item.brand.designer.full_name %></h3>
+                <div class="cart-item-description"><%= item.brand.description %></div>
+                <h2 class="price"><%= item.quantity %> x <span class="dollar-sign">$</span><%= item.total_item_price %></h2>
+              </div>
+            </div>
+            <div class="w-col w-col-4 right-column-checkout">
+              <div class="checkout-sidebar-div">
+                <h3 class="cart-total">Your Cart Total</h3>
+                <h2 class="cart-total-price"><span class="dollar-sign large">$</span><%= item.total_item_price %></h2>
+                <%= link_to 'Checkout', new_order_path, method: :get, :class => "button get-started-submit-button checkout" %>
+              </div>
+            </div>
+          </div>
+
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

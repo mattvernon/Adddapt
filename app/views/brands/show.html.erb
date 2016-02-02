@@ -1,0 +1,39 @@
+<div class="w-section">
+  <div class="w-container">
+    <div class="h2-div">
+      <div class="w-row">
+        <div class="w-col w-col-8 brand-left-column">
+          <% if @preview_images.present? %>
+            <% @preview_images.each do |preview_image| %>
+              <%= image_tag(preview_image.image.url, :class => "brand-preview-image") %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="w-col w-col-4 header-column-right brand-right-column">
+          <div class="w-clearfix brand-name-and-price-div">
+            <h1 class="brand-show-heading"><%= @brand.name %></h1>
+            <h2 class="brand-price">$<%= @brand.price %></h2>
+          </div>
+          <div class="brand-designer-div">
+            <%= image_tag(@brand.designer.profile_pic.url(:thumb), :class => "navbar-profile-pic", :width => "28", :height => "28") %>
+            <div class="reg-text-12 navbar-name-brand"><%= @brand.designer.full_name %></div>
+          </div>
+          <p class="brand-info-text"><%= @brand.description %></p>
+       <!--    <div class="brand-includes-text">Includes:</div>
+          <ul class="brand-includes-list">
+            <li class="brand-includes-list-item">Logo</li>
+            <li class="brand-includes-list-item">3 Illustrations</li>
+            <li class="brand-includes-list-item">4 Large Icons</li>
+            <li class="brand-includes-list-item">5 Badge-Style Illustrations</li>
+            <li class="brand-includes-list-item">10 Small Icons</li>
+            <li class="brand-includes-list-item">1 Repeat Pattern</li>
+            <li class="brand-includes-list-item">Brand Guidelines</li>
+            <li class="brand-includes-list-item">Web and Print Ready Files</li>
+          </ul> -->
+          <p class="brand-info-text">All brand packages for sale on Adddapt include the personalization of the brand. Once purchased, you’ll be put in contact with the original designer – who will be more than happy to swap out any placeholder text and images.&nbsp;</p>
+          <%= link_to 'Buy this Brand!', line_items_path(brand_id: @brand), method: :post, :class => "button get-started-submit-button login-button buy-this-brand-button" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

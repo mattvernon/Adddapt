@@ -1,0 +1,39 @@
+<div class="w-section">
+  <div class="w-container static-header plain-pink">
+    <div class="manifesto-small-header">Manifesto</div>
+    <h1 class="static-header-h1 manifesto">Great design<br>should be<br>open,<br>and available<br>to everyone</h1><a class="button get-started-submit-button manifesto-button" href="#">I Agree</a>
+  </div>
+</div>
+<div class="w-section">
+  <div class="w-container">
+    <div class="get-started-block">
+      <h2 class="get-started-h2">Help make the world beautiful – Sign up now.</h2>
+      <div class="w-form">
+
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => "w-clearfix get-started-form"}) do |f| %>
+          <%= devise_error_messages! %>
+
+          <div>
+            <%= f.email_field :email, autofocus: true, :class => "w-input get-email" %>
+          </div>
+
+          <div>
+            <%= f.password_field :password, autocomplete: "off", :class => "w-input get-password" %>
+          </div>
+
+          <div>
+            <%= f.submit "Sign up", :class => "w-button get-started-submit-button" %>
+          </div>
+        <% end %>
+ 
+        <div class="w-form-done">
+          <p>Thank you! Your submission has been received!</p>
+        </div>
+        <div class="w-form-fail">
+          <p>Oops! Something went wrong while submitting the form</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

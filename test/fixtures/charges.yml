@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount: 1
+  designer_uid: MyString
+  customer_token: MyString
+  customer_id: 1
+  designer_id: 1
+
+two:
+  amount: 1
+  designer_uid: MyString
+  customer_token: MyString
+  customer_id: 1
+  designer_id: 1

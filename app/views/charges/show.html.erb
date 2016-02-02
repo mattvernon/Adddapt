@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @charge.amount %>
+</p>
+
+<p>
+  <strong>Designer uid:</strong>
+  <%= @charge.designer_uid %>
+</p>
+
+<p>
+  <strong>Customer token:</strong>
+  <%= @charge.customer_token %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @charge.customer_id %>
+</p>
+
+<p>
+  <strong>Designer:</strong>
+  <%= @charge.designer_id %>
+</p>
+
+<%= link_to 'Edit', edit_charge_path(@charge) %> |
+<%= link_to 'Back', charges_path %>

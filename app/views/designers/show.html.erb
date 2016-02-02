@@ -1,0 +1,56 @@
+<div class="w-section">
+  <div class="w-container">
+    <div class="profile-header">
+      <div class="profile-header-bottom"></div>
+      <div class="profile-header-designer-image"><%= image_tag(@designer.profile_pic.url(:medium), :class => "dashboard-profile-image-show", :width => "100", :height => "100") %></div>
+      <div class="profile-header-designer-info">
+        <h3 class="dashboard-designer-name profile-name"><%= @designer.full_name %></h3>
+        <div class="reg-text-12-non-inline centered">
+          <%= @designer.bio %>
+          <br><%= @designer.location %>
+          <br><a class="designer-profile-link" href="<%= @designer.website_url %>" target="_blank" ><%= @designer.website_url %></a>
+      </div><br>
+      <div class="profile-header-hr"></div>
+    </div>
+  </div>
+</div>
+<div class="w-container brands-container profile-brands">
+  <h1 class="brands-for-sale-h1">Brands for Sale</h1>
+  <div class="brand-row">
+    <div class="w-row">
+
+      <% @designer.brands.active.each_slice(3) do |active_brands| %>
+        <div class="w-row dashboard-brands-row">
+          <% active_brands.each do |active_brand| %>
+            <div class="w-col w-col-4">
+              <div class="w-clearfix brand-div-dashboard"><%= image_tag(active_brand.thumbnail.url, :height => "175", :class => "dashboard-brand-image") %>
+                <div class="reg-text-12 brand-name-dashboard"><%= link_to active_brand.name, brand_path(active_brand) %></div><%= link_to image_tag("gear-icon.svg", :class => "gear-icon", :size => "15x15"), edit_brand_path(active_brand) %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+     
+    </div>
+  </div>
+</div>
+<div class="w-container brands-container">
+  <h1 class="brands-for-sale-h1">Archive</h1>
+  <div class="brand-row">
+    <div class="w-row">
+
+      <% @designer.brands.archived.each_slice(3) do |brands| %>
+        <div class="w-row">
+          <% brands.each do |abrand| %>
+            <div class="w-col w-col-4">
+              <div class="w-clearfix brand-div-dashboard"><%= image_tag(abrand.thumbnail.url, :height => "175", :class => "dashboard-brand-image") %>
+                <div class="reg-text-12 brand-name-dashboard"><%= link_to abrand.name, brand_path(abrand) %></div><%= link_to image_tag("gear-icon.svg", :class => "gear-icon", :size => "15x15"), edit_brand_path(abrand) %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+      
+    </div>
+  </div>
+</div>

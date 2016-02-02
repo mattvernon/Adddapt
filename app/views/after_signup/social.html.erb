@@ -1,0 +1,52 @@
+<div class="w-section">
+  <div class="w-container">
+    <div class="h2-div">
+      <div class="w-row header-row">
+        <div class="w-col w-col-6">
+          <h3 class="h3-div-heading no-left-padding">Welcome to Adddapt!</h3>
+        </div>
+        <div class="w-col w-col-6">
+          <h3 class="h3-div-heading right">Step 3. Share your social media accounts</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="w-section">
+  <div class="w-container">
+    <div class="designer-info-div edit-profile-div after-sign-up-no-padding">
+      <div class="w-container login-container after-sign-up">
+        <div class="login-form-body after-signup-form-body">
+          <div class="w-form login-form rounded-top">
+            <%= form_for @designer, :url => wizard_path, method: :put, :html => { :multipart => true, :class => "after-signup-form" } do |f| %>
+              <% if @designer.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(@designer.errors.count, "error") %> prohibited this designer from being saved:</h2>
+
+                  <ul>
+                  <% @designer.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                  </ul>
+                </div>
+              <% end %>
+              <%= f.label :website_url, "Personal Website:", :class => "after-sign-up-label"  %>
+              <%= f.text_field :website_url, :class => "w-input get-email login-field", :placeholder => "http://www.mywebsite.com" %>
+
+              <%= f.label :facebook_url, "Facebook Username:", :class => "after-sign-up-label"  %>
+              <%= f.text_field :facebook_url, :class => "w-input get-email login-field" %>
+
+              <%= f.label :twitter_url, "Twitter Username:", :class => "after-sign-up-label" %>
+              <%= f.text_field :twitter_url, :class => "w-input get-email login-field" %>
+
+              <%= f.label :dribble_url, "Dribbble Username:", :class => "after-sign-up-label"  %>
+              <%= f.text_area :dribbble_url, :class => "w-input get-email login-field" %>
+
+              <%= f.submit "Complete", :class => "w-button get-started-submit-button login-button" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

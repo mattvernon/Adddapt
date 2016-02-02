@@ -1,0 +1,94 @@
+<div class="w-section hero-section">
+  <div class="hero-cont">
+    <div class="w-row hero-row">
+      <div class="w-col w-col-6 left-col">
+        <div class="left-hero-div">
+          <h4>for designers</h4>
+          <h1>Complete freedom<br>to create, <br>and work on <br>projects you love.</h1><%= link_to "Learn More", for_designers_path, :class => "button transparent-button header-button" %>
+        </div>
+      </div>
+      <div class="w-col w-col-6 right-col">
+        <div class="right-hero-div">
+          <h4>for startups</h4>
+          <h1 class="right-hero-h1">Beautiful and<br>simple branding<br>that just works.</h1><%= link_to "Learn More", startups_path, :class => "button transparent-button header-button" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="w-section">
+  <div class="w-container">
+    <div class="brands-for-sale-div">
+      <h3>Brands for sale</h3>
+    </div>
+  </div>
+</div>
+<div class="w-section">
+  <div class="w-container brands-container">
+    <div class="brand-row">
+      <%= @brands.active.each_slice(3) do |brands| %>
+        <div class="w-row dashboard-brands-row">
+          <% brands.each do |abrand| %>
+            <div class="w-col w-col-4">
+              <div class="brand-div">
+                <div class="brand-image">
+                  <%= image_tag(abrand.thumbnail.url, :class => "brand-image-pic") %>
+                </div>
+                <div class="brand-name">
+                  <div class="brand-name-text">
+                    <%= link_to abrand.name, brand_path(abrand.id) %>
+                  </div>
+                </div>
+              </div>
+              <%= link_to(image_tag(abrand.designer.profile_pic.url, :class => "designer-image-small"), designer_path(abrand.designer.id)) %>
+              <div class="designer-name-text">
+                <%= link_to abrand.designer.full_name, designer_path(abrand.designer.id) %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<!-- <div class="w-section">
+  <div class="w-container">
+    <div class="next-icon-div">
+      <h3 class="next-icon"></h3>
+    </div>
+  </div>
+</div> -->
+<div class="w-section">
+  <div class="w-container">
+    <div class="get-started-block">
+      <h2 class="get-started-h2">Help make the world beautiful – Sign up now.</h2>
+      <div class="w-form">
+
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => "w-clearfix get-started-form"}) do |f| %>
+          <%= devise_error_messages! %>
+
+          <div>
+            <%= f.email_field :email, autofocus: true, :class => "w-input get-email" %>
+          </div>
+
+          <div>
+            <%= f.password_field :password, autocomplete: "off", :class => "w-input get-password" %>
+          </div>
+
+          <div>
+            <%= f.submit "Sign up", :class => "w-button get-started-submit-button" %>
+          </div>
+        <% end %>
+ 
+        <div class="w-form-done">
+          <p>Thank you! Your submission has been received!</p>
+        </div>
+        <div class="w-form-fail">
+          <p>Oops! Something went wrong while submitting the form</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+

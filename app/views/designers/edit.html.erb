@@ -1,0 +1,135 @@
+<%= form_for @designer, :html => { :multipart => true } do |f| %>
+  <% if @designer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@designer.errors.count, "error") %> prohibited this designer from being saved:</h2>
+
+      <ul>
+      <% @designer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="w-section">
+    <div class="w-container">
+      <div class="h2-div">
+        <div class="w-row">
+          <div class="w-col w-col-6">
+            <h3 class="h2-div-heading">Edit Profile</h3>
+          </div>
+          <div class="w-col w-col-6"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-section">
+    <div class="w-container">
+      <div class="designer-info-div edit-profile-div">
+        <div class="w-row">
+          <div class="w-col w-col-2"><%= image_tag(@designer.profile_pic.url(:medium), :class => "dashboard-profile-image", :width => "100", :height => "100") %>
+          </div>
+          <div class="w-col w-col-10">
+            <div>
+              <div class="w-form">
+                <form id="email-form" name="email-form" data-name="Email Form">
+                  <div class="w-row">
+                    <div class="w-col w-col-2">
+                      <%= f.label :first_name, :class => "profile-edit-label" %>
+                    </div>
+                    <div class="w-col w-col-10">
+                      <%= f.text_field :first_name, :class => "w-input profile-edit-text-field" %>
+                    </div>
+                  </div>
+                  <div class="w-row">
+                    <div class="w-col w-col-2">
+                      <%= f.label :last_name, :class => "profile-edit-label" %>
+                    </div>
+                    <div class="w-col w-col-10">
+                      <%= f.text_field :last_name, :class => "w-input profile-edit-text-field" %>
+                    </div>
+                  </div>
+                  <div class="w-row">
+                    <div class="w-col w-col-2">
+                      <%= f.label :profile_pic, :class => "profile-edit-label" %>
+                    </div>
+                    <div class="w-col w-col-10">
+                      <%= f.file_field :profile_pic, :class => "w-input profile-edit-text-field" %>
+                    </div>
+                  </div>
+                  <div class="w-row">
+                    <div class="w-col w-col-2">
+                      <%= f.label :email, :class => "profile-edit-label" %>
+                    </div>
+                    <div class="w-col w-col-10">
+                      <%= f.text_field :email, :class => "w-input profile-edit-text-field" %>
+                    </div>
+                  </div>
+                  <div class="reg-text-12 edit-profile-divider-text">We won’t share your private email address with other Adddapt users.</div>
+                  <div class="w-row">
+                    <div class="w-col w-col-2">
+                      <%= f.label :bio, :class => "profile-edit-label" %>
+                    </div>
+                    <div class="w-col w-col-10">
+                      <%= f.text_area :bio, :class => "w-input profile-edit-text-field" %>
+                    </div>
+                  </div>
+                  <div class="w-row">
+                    <div class="w-col w-col-2">
+                      <%= f.label :location, :class => "profile-edit-label"  %>
+                    </div>
+                    <div class="w-col w-col-10">
+                      <%= f.text_field :location, :class => "w-input profile-edit-text-field" %>
+                    </div>
+                  </div>
+                  <div class="w-row">
+                    <div class="w-col w-col-2">
+                      <%= f.label :website_url, :class => "profile-edit-label"  %>
+                    </div>
+                    <div class="w-col w-col-10">
+                      <%= f.text_field :website_url, :class => "w-input profile-edit-text-field" %>
+                    </div>
+                  </div>
+                  <div class="w-row">
+                    <div class="w-col w-col-2">
+                      <%= f.label :facebook_url, :class => "profile-edit-label"  %>
+                    </div>
+                    <div class="w-col w-col-10">
+                      <%= f.text_field :facebook_url, :class => "w-input profile-edit-text-field" %>
+                    </div>
+                  </div>
+                  <div class="w-row">
+                    <div class="w-col w-col-2">
+                      <%= f.label :twitter_url, :class => "profile-edit-label"  %>
+                    </div>
+                    <div class="w-col w-col-10">
+                      <%= f.text_field :twitter_url, :class => "w-input profile-edit-text-field" %>
+                    </div>
+                  </div>
+                  <div class="w-row">
+                    <div class="w-col w-col-2">
+                      <%= f.label :dribbble_url, :class => "profile-edit-label"  %>
+                    </div>
+                    <div class="w-col w-col-10">
+                      <%= f.text_field :dribbble_url, :class => "w-input profile-edit-text-field" %>
+                    </div>
+                  </div>
+                  <%= f.submit 'Save', :class => "w-button get-started-submit-button edit-profile-button" %>
+                </form>
+                <div class="w-form-done">
+                  <p>Thank you! Your submission has been received!</p>
+                </div>
+                <div class="w-form-fail">
+                  <p>Oops! Something went wrong while submitting the form</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% end %>
+
+

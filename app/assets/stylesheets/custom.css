@@ -1,0 +1,202 @@
+.get-email::-webkit-input-placeholder { /* WebKit browsers */
+   color:    #e5e5e5;
+}
+.get-email:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #e5e5e5;
+   opacity:  1;
+}
+.get-email::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #e5e5e5;
+   opacity:  1;
+}
+.get-email:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #e5e5e5;
+}
+.get-password::-webkit-input-placeholder { /* WebKit browsers */
+   color:    #e5e5e5;
+}
+.get-password:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #e5e5e5;
+   opacity:  1;
+}
+.get-password::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #e5e5e5;
+   opacity:  1;
+}
+.get-password:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #e5e5e5;
+}
+
+.dashboard-profile-image-show {
+  border-radius: 55px;
+  margin-top: 0px !important;
+}
+
+.dashboard-brands-row {
+  margin-bottom: 50px;
+}
+
+/* REG-12-NON-INLINE-FIX */
+.reg-text-12-non-inline {
+  margin-left: 5px;
+  font-family:'Open Sans', sans-serif;
+  color: #1e212a;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* NAVBAR FIX */
+.dashboard-profile-image {
+  border-radius: 55px;
+  margin-top: 10px;
+  margin-left: 15px;
+  float: right;
+}
+.reg-text-12.navbar-name {
+  margin-top: 15px;
+  margin-right: 5px !important;
+  margin-left: 0px !important;
+  margin-bottom: 10px;
+  float:right;
+}
+.link-menu-dropdown {
+  margin-top: 0px !important;
+}
+.navbar-dropdown {
+    width: 250px;
+    float: right;
+    font-size: 40px;
+    padding: 5px !important;
+    text-align: center;
+}
+.navbar-drop-down {
+  margin-top: -25px;
+}
+.dropdown-list {
+    width: 150px;
+    display: none;
+    margin-top: 20px;
+    margin-left: 100px;
+    padding-top: 50px;
+    border-radius: 2px;
+    background-color: transparent;
+    float: right;
+    position: absolute;
+}
+.dropdown:hover .dropdown-list{
+    display: block;
+}
+.w-icon-dropdown-toggle {
+ font-size: 14px;
+ margin-left: -50px;
+ display: inline-block !important;
+ float: right;
+}
+
+.dropdown-list {
+  display: none;
+}
+.dropdown-list.w--open {
+  display: none;
+  margin-top: -50px;
+  padding-top: 50px;
+  padding-left: 0px;
+  border-radius: 2px;
+  background-color: transparent;
+}
+.dropdown-link {
+  background-color: #f2f2f2;
+}
+
+.h2-div-heading {
+  padding-left: 35px;
+}
+
+/* LINK MENU */
+.link-menu {
+  position: absolute;
+  left: 35px !important;
+  bottom: 30px !important;
+  display: block;
+  width: 100%;
+  margin-left: 734px;
+  float: left;
+  clear: none;
+}
+
+/* FILE UPLOAD PADDING */
+.padding-top {
+  padding-top: 15px !important;
+}
+.no-right-margin {
+  margin-right: 0px !important;
+}
+
+/* FIX MARGIN RIGHT ON DESIGNER PROFILE LINK */
+ .designer-profile-link {
+   color: #647096;
+   font-weight: 400;
+   letter-spacing: 0px;
+   text-transform: none;
+   margin-right: 0px !important;
+ }
+
+
+/* FIX BRAND SHOW RIGHT COLUMN */
+ .reg-text-12.navbar-name-brand {
+   margin-right: 25px !important;
+   margin-left: 10px !important;
+   clear: left !important;
+ }
+ .reg-text-12.navbar-name-brand:hover {
+   color: #f13461;
+ }
+
+ /* FOOTER LINKS */
+ .footer-link-list {
+   margin-top: 75px;
+   padding-left: 100px !important;
+   font-family:'Open Sans', sans-serif;
+   color: white;
+   font-size: 11px;
+ }
+
+ /* EDIT BIO SIGNUP HEIGHT */
+ .get-email.login-field.bio-signup {
+  height: 160px !important;
+}
+
+/* HOME BRAND NAME MARGIN */
+.brand-name-text a {
+  margin-right: 0px !important;
+  text-transform: capitalize !important;
+}
+
+
+
+/* For Webkit browsers (Chrome, Safari) */
+::-webkit-input-placeholder {
+   color: #d8d7d7 !important;
+   font-weight: 200 !important;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #d8d7d7 !important;  
+   font-weight: 200 !important;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #d8d7d7 !important;  
+   font-weight: 200 !important;
+}
+
+:-ms-input-placeholder {  
+   color: #d8d7d7 !important;  
+   font-weight: 200 !important;
+}
+
+/* PROPER WIDTH FOR SOME FORMS */
+.widthed {
+  width: 60% !important;
+}
